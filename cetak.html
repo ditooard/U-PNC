@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Formulir Pendaftaran</title>
+
+    <!-- Link CSS , Bootsrap Online, dan Bootsrap Offline -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="logo.png"/>
+    <link rel="stylesheet" href="portofolio/assets/css/bootstrap.min.css">
+    <script src="portofolio/assets/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body id="body">
+    <div id="data">
+        <div class="row" style="margin-right: 100px; ;">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1" s>
+            <img src="logo.png" alt="logoPNC" width="120px" height="120px">    
+        </div>
+
+        <div class="col" style="margin-left:40px; padding-top:10px;">
+            <h5>POLITEKNIK NEGERI CILACAP</h4>
+            <h5 style="font-weight:normal;">KARTU PESERTA PMB ONLINE</h5>
+            <h5 style="font-weight:normal">TA 2022-2023</h5>
+        </div>
+
+        <div class="col mt-auto mb-2">
+            <p class="text-end">22-1032-442-0032</p>
+        </div>
+    </div>
+    
+    <div class="row"style="margin-right: 100px;">
+        <div class="col-sm-1"></div>
+        <div class="col table-responsive">
+            <hr size="5px" style="background-color: black; " class="opacity-100">
+            <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th style="width: 20px; height: 20px;" rowspan="5"><img src="portofolio/assets/img/log.jpg" alt="" style="width:200px; height:250px;"></th>
+                    <td style="text-indent: 0.3cm; width: 210px; ">Nama</td>
+                    <td style="text-indent: 0.2cm; width: 800px;"><span id="P.NM"></span></td>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm; width: 210px;">NIK</td>
+                    <td style="text-indent: 0.2cm; width: 800px;"><span id="P.NIK"></span></td>  
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm; width: 210px;">Tempat Tanggal Lahir</td>
+                    <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;">Kebumen, 1 Mei 2004</th>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm; width: 210px;">Jenis Kelamin</td>
+                    <td style="text-indent: 0.2cm; width: 800px;"><span id="P.JK"></span></td>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm; width: 210px;">Nomor Peserta</td>
+                    <td style="text-indent: 0.2cm; font-weight: bold; width: 800px;">22-1032-442-0032</td>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm">Alamat</td>
+                    <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;"><span id="P.ALMT"></span></th>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm">Tanggal Pendaftaran</td>
+                    <td style="text-indent: 0.2cm; width: 800px;"><span id="P.TGL"></span></td>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm">Program Keahlian</td>
+                    <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;"><span id="P.PR"></span></th>
+                </tr>
+                <tr>
+                    <td style="text-indent: 0.3cm">Asal Sekolah</td>
+                    <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;"><span id="P.ASL"></span></th>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm">Status Sekolah</td>
+                    <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;"><span id="P.STT"></span></th>
+                </tr>
+
+                <tr>
+                    <td style="text-indent: 0.3cm">Informasi Lainnya</td>
+                    <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;"><span id="P.INPO"></span></th> 
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <script>
+        //mendeklrasikan local storage yang sudah kita buat di page formulir menjadi tipe data dan variabel javascript
+        const Nama = localStorage.getItem('P.NM');
+        const NIK = localStorage.getItem('P.NIK');
+        const Tanggal = localStorage.getItem('P.TGL');
+        const JK = localStorage.getItem('P.JK');
+        const alamat = localStorage.getItem('P.ALMT');
+        const jurusan = localStorage.getItem('P.PR');
+        const asal = localStorage.getItem('P.ASL');
+        const status = localStorage.getItem('P.STT');
+        const info = localStorage.getItem('P.INPO');
+
+        //mendeklarasikan id html dari tipe dan variabel javascript, id inilah yang nantinya dipanggil dalam bahasa html diatas untuk mentransfer data dari formulir
+        // contoh : <td style="text-indent: 0.3cm">Informasi Lainnya</td>
+        // <th colspan="2" style="text-indent: 0.2cm; font-weight: normal;"><span id="P.INPO"></span></th>
+        document.getElementById('P.NM').textContent = Nama;
+        document.getElementById('P.NIK').textContent = NIK;
+        document.getElementById('P.TGL').textContent = Tanggal;
+        document.getElementById('P.JK').textContent = JK;
+        document.getElementById('P.ALMT').textContent = alamat;
+        document.getElementById('P.PR').textContent = jurusan;
+        document.getElementById('P.ASL').textContent = asal;
+        document.getElementById('P.STT').textContent = status;
+        document.getElementById('P.INPO').textContent = info;
+    </script>
+    <br>
+    <center>
+        <button class="btn btn-primary" onclick="window.print()">Cetak</button>
+    </center>
+    
+    <script>
+        function printpage(){
+            window.printpage();
+            var body = document.getElementById('body').innerHTML;
+            var data = document.getElementById('data').innerHTML;
+            document.getElementById('data').innerHTML = body;
+            window.print();
+        }
+    </script>
+</body>
+</html>

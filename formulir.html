@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    <!-- Link CSS , Bootsrap Online, dan Bootsrap Offline -->
+    <title>Formulir Pendaftaran PNC</title>
+    <link rel="stylesheet" href="portofolio/assets/css/bootstrap.min.css">
+    <script src="portofolio/assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/"/>
+    <link rel="icon" type="image/x-icon" href="logo.png"/>
+
+    <!-- Formulir Pendaftaran dengan menggunakan Form Gutters dari Bootsrap v.5 -->
+  </head>
+  <body>
+    <header
+      class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"/>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-4" href="index.html" style="color: black; font-weight:bold ;">Sign out</a>
+        </div>
+      </div>
+    </header>
+
+      <div class="row">
+          <form id="form">
+            <div class="container">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Formulir Pendaftaran Mahasiswa Baru</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                  <div class="btn-group me-2">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                    <span data-feather="calendar" class="align-text-bottom"></span>
+                    This week
+                  </button>
+                </div>
+              </div>
+              
+              <div class="row g-4">
+                <div class="col-6">
+                  <label class="pb-2" for="">Nama</label>
+                  <input id="nm" class="form-control  bg-light" type="text" placeholder="Masukkan Nama" aria-label="Masukkan Nama" required>
+                </div>
+                
+                <div class="col-6">
+                  <label class="pb-2" for="">NIK</label>
+                  <input id="nik" class="form-control  bg-light" type="text" placeholder="Masukkan NIK" aria-label="Masukkan NIK" required>
+                </div>
+                
+                <div class="container overflow-hidden">
+                  <div class="row g-5 pt-3">
+                    <div class="col-6">
+                      <label class="pb-2" for="">Tanggal</label>
+                      <input id="tgl" class="form-control  bg-light w-100" type="date" aria-label="tanggal" required>
+                    </div>
+
+                    <div class="col-6 p-2">
+                      <label for="JKL">Jenis Kelamin</label>
+                      <div class="form-check pt-2">
+                        <input type="radio" name="jk" onclick="radio(this.value)" id="jenkel" class="form-check-input" value="Laki-laki" >Laki-laki
+                      </div>
+                      <div class="form-check pt-2">
+                          <input type="radio" name="jk" id="jenkel" class="form-check-input" onclick="radio(this.value)" value="Perempuan">Perempuan
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="validationCustom03" class="form-label">Alamat</label>
+                    <input id="almt" type="text" class="form-control  bg-light" id="validationCustom03" style="width: 1300px;" required>
+                  </div>
+                  
+                  <div class="col-md-3 pt-2">
+                    <label for="validationCustom04" class="form-label">Program Studi</label>
+                    <select id="pr" class="form-select  bg-light" id="validationCustom04"  style="width: 1300px;"required>
+                      <option selected disabled value="">Jurusan</option>
+                      <option>Teknik Informatika</option>
+                      <option>Teknik Mesin</option>
+                      <option>Teknik Listrik</option>
+                      <option>Teknik Elektro</option>
+                      <option>Teknik Pengendalian Pencemaran Lingkungan</option>
+                      <option>Keamanan Siber</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">Asal sekolah</label>
+                  <input id="asl" type="text" class="form-control  bg-light" id="validationCustom03" required>
+                </div>
+                
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Status Sekolah</label>
+                  <select id="stt" class="form-select  bg-light" id="validationCustom04" required>
+                    <option selected disabled value="">Status</option>
+                    <option>Negeri</option>
+                    <option>Swasta</option>
+                  </select>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="validationCustom05" class="form-label">Informasi lain</label>
+                  <input id="inpo" type="text" class="form-control  bg-light" style="width: 300px;" id="validationCustom05">
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+              </div>
+            </div>
+          </form>
+      </div>
+    
+    <script>  
+
+    // mendeklrasikan id yang sudah dibuat dalam inputan html diatas menjadi tipe data dan variabel javascript
+      const form = document.getElementById('form');
+      const nama = document.getElementById('nm');
+      const nik = document.getElementById('nik');
+      const tanggal = document.getElementById('tgl');
+      const jeniskel = document.getElementById('jenkel');
+      const alamat = document.getElementById('almt');
+      const prodi= document.getElementById('pr');
+      const asal = document.getElementById('asl');
+      const status = document.getElementById('stt');
+      const info = document.getElementById('inpo');
+      form.addEventListener('submit', 
+      
+      // mendeklrasikan tipe data dan variabel javascript dengan value agar menjadi sebuah item
+      function(e){
+        e.preventDefault();
+        const namaValue = nama.value;
+        const nikValue = nik.value;
+        const tanggalValue = tanggal.value;
+        const jeniskelValue = jeniskel.value;
+        const alamatValue = alamat.value;
+        const prodiValue = prodi.value;
+        const asalValue = asal.value;
+        const statusValue = status.value;
+        const infoValue = info.value;
+
+        // mendeklrasikan tipe data dan variabel javascript yang sudah memiliki value menjadi local storage yang di set menjadi item
+        //data dibawah inilah yang nanti kita butuhkan dalam menghubungkan antara formulir dengan cetak formulir
+        localStorage.setItem('P.NM', namaValue);
+        localStorage.setItem('P.NIK', nikValue);
+        localStorage.setItem('P.TGL', tanggalValue);
+        localStorage.setItem('P.JK', jeniskelValue);
+        localStorage.setItem('P.ALMT', alamatValue);
+        localStorage.setItem('P.PR', prodiValue);
+        localStorage.setItem('P.ASL', asalValue);
+        localStorage.setItem('P.STT', statusValue);
+        localStorage.setItem('P.INPO', infoValue);
+
+        window.location.href="cetak.html";
+      });
+    </script>
+
+    <script>
+      function radio(jk){
+        document.getElementById("jenkel").value=jk;
+      } 
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+      integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+      integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+section{
+    scroll-margin-top: 4rem;
+}
+
+.navbar{
+    background-color:deepskyblue;
+}
+
+.navbar-brand{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.collapse{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: aliceblue;
+}
+
+@media (min-width: 576px){
+    .main-header{
+        font-size: 4em;
+    }
+}
+
+.text-content{
+    letter-spacing: 0.025rem;
+    font-size: 0.900rem;
+    color: gray;
+    text-align: justify;
+}
+
+.my-photo{
+    object-fit: cover;
+    width : 500px;
+    border-radius: 0.5rem;
+    margin-left: 50px;
+}
+
